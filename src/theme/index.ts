@@ -118,6 +118,13 @@ export const theme: MantineThemeOverride = {
         },
       },
     },
+    Text: {
+      styles: {
+        root: {
+          color: "#171C43",
+        },
+      },
+    },
   },
   colors: {
     primary: [

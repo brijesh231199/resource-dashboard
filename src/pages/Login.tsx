@@ -16,6 +16,8 @@ import { NotificationType } from "../constants/DataConstants";
 const Login = () => {
   const navigate = useNavigate();
   const { login } = useAppStore();
+
+  // Initialize form with validation rules
   const form = useForm({
     initialValues: {
       username: "",
@@ -32,17 +34,19 @@ const Login = () => {
     },
   });
 
+  // Handle form submission
   const handleSubmit = (values: typeof form.values) => {
     if (form.isValid()) {
       if (login(values.username, values.password)) {
+        // Show success notification on successful login
         showNotification({
           title: "Login Successful",
           description: "Welcome back!",
           type: NotificationType.SUCCESS,
         });
-        navigate("/dashboard");
+        navigate("/users");
       } else {
-        console.log("invalid cred");
+        // Show error notification if authentication fails
         showNotification({
           title: "Authentication Failed",
           description: "Invalid credentials",
