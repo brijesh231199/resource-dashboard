@@ -34,7 +34,9 @@ export const routes = [
   },
 ];
 
-const router = createBrowserRouter(routes);
+const router = createBrowserRouter(routes, {
+  basename: "/resource-dashboard", // Set the basename here
+});
 
 // Configure React Query client
 const queryClient = new QueryClient({

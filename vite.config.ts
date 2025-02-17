@@ -9,5 +9,5 @@ export default defineConfig({
   build: {
     outDir: "dist",
   },
-  base: "/resource-dashboard/",
+  base: "/resource-dashboard/", // This tells Vite to use /resource-dashboard/ as the base URL
 });
